@@ -1,6 +1,6 @@
 <template>
   <div id="basicLayout">
-    <a-layout style="height: 400px">
+    <a-layout style="min-height: 100vh">
       <a-layout-header class="header">
         <GlobalHeader></GlobalHeader>
       </a-layout-header>
@@ -23,17 +23,18 @@ export default defineComponent({
 
 <style scoped>
 #basicLayout .header {
-  background-color: red;
+  margin-bottom: 16px;
+  box-shadow: #eee 1px 1px 5px;
 }
 
 #basicLayout .content {
-  background-color: red;
+  padding: 10px;
 }
 
 #basicLayout .footer {
   background-color: aliceblue;
   padding: 16px;
-  position: absolute;
+  position: sticky;
   bottom: 0px;
   left: 0px;
   right: 0px;
