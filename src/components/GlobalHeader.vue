@@ -88,13 +88,6 @@ const visibleRoute = computed(() => {
 //     return true;
 //   });
 // });
-
-setTimeout(() => {
-  store.dispatch("user/getLoginUser", {
-    userName: "Jenfer",
-    userRole: accessEnum.ADMIN,
-  });
-}, 3000);
 </script>
 
 <style scoped>
