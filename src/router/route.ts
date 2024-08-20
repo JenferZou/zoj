@@ -30,6 +30,12 @@ export const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
+    path: "/add/question",
+    name: "创建题目",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/AddQuestionView.vue"),
+  },
+  {
     path: "/about",
     name: "题目列表",
     component: () =>

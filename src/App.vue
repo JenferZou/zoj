@@ -17,6 +17,7 @@
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
+import "bytemd/dist/index.css";
 
 const route = useRoute();
 </script>
