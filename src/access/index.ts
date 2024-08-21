@@ -10,10 +10,15 @@ router.beforeEach(async (to, from, next) => {
       return;
     }
   }
-  const loginUser = store.state.user.loginUser;
+  let loginUser = store.state.user.loginUser;
 
-  if (!loginUser || !loginUser.userRole) {
+  if (
+    !loginUser ||
+    !loginUser.userRole ||
+    loginUser.userRole === accessEnum.NOT_LOGIN
+  ) {
     await store.dispatch("user/getLoginUser");
+    loginUser = store.state.user.loginUser;
   }
 
   const needAccess = (to.meta?.access as string) ?? accessEnum.NOT_LOGIN;
