@@ -40,6 +40,17 @@ export const routes: Array<RouteRecordRaw> = [
       ),
   },
   {
+    path: "/question_submit",
+    name: "浏览题目提交",
+    meta: {
+      access: accessEnum.ADMIN,
+    },
+    component: () =>
+      import(
+        /* webpackChunkName: "about" */ "../views/question/QuestionSubmitView.vue"
+      ),
+  },
+  {
     path: "/view/question/:id",
     name: "在线做题",
     props: true,

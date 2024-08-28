@@ -48,10 +48,10 @@
               :style="{ width: '320px' }"
               placeholder="选择编程语言"
             >
-              <a-option>java</a-option>
-              <a-option>cpp</a-option>
-              <a-option>go</a-option>
-              <a-option>html</a-option>
+              <a-option value="java">Java</a-option>
+              <a-option value="cpp">C++</a-option>
+              <a-option value="go">Go</a-option>
+              <a-option value="html">HTML</a-option>
             </a-select>
           </a-form-item>
         </a-form>
@@ -115,8 +115,7 @@ const doSubmit = async () => {
   if (!question.value?.id) {
     return;
   }
-
-  const res = await QuestionSubmitControllerService.doQuestionSubmitUsingPost({
+  const res = await QuestionControllerService.doSubmitQuesitonUsingPost({
     ...form.value,
     questionId: question.value.id,
   });
